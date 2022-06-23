@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to khandokar website</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    .banner{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url(IMG_3514.JPG);
+        background-size:cover;
+    }
+    nav{
+        width:960px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    nav .logo{
+        margin: 10px;
+    }
+    nav .logo a{
+        text-decoration: none;
+        font-size: 25px;
+        color: tomato;
+    }
+    nav ul{
+        list-style:none;
+        margin: 20px 0px;
+    }
+    nav ul li{
+        display:inline-block;
+        margin-left: 18px;
+
+
+    }
+    ul li a{
+        text-decoration: none;
+        color:white;
+        font-size: 22px;
+        font-weight: 600px;
+        padding: 10px 0px;
+    }
+    ul li::after{
+        content: "";
+        width: 0%;
+        height: 3px;
+        display: block;
+        margin: auto;
+        background: tomato;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    ul li:hover::after{
+        width: 100%;
+        margin: auto;
+    }
+    .banner-text{
+        position: absolute;
+        top:40%;
+        left: 10%;
+        transform: translate(-99%,-30%);
+        color: white;
+        text-align: left;
+    }
+    .banner-text h1{
+        font-size: 60px;
+        padding-bottom: 13px;
+    }
+    .banner-text p{
+        padding-bottom: 5px;
+        font-size: 20px;
+        text-align: left;
+
+    }
+
+    .about{
+        padding: 70px 0px;
+        width: 960px;
+        margin: auto;
+        /* text-align: center; */
+        display: flex;
+        justify-content: space-around;
+    }
+    .about h2{
+        padding-bottom: 38px;
+        letter-spacing: 5px;
+        color: tomato;
+        font-size: 35px;
+    }
+    .about h2::after{
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: #dddd;
+        border-radius: 3px;
+        display: block;
+    }
+    .about-img img{
+        width: 90%;
+    }
+    .about-text {
+        text-align: center;
+    }
+    .about-text p{
+        padding: 30px 0px;
+        font-size: 18px;
+        color: gray;
+    }
+    button{
+        padding: 15px 15px;
+        background: tomato;
+        font-size: 20px;
+        color: #dddd;
+        border: 2px solid rgb(232, 232, 232);
+        border-radius:8px;
+    }
+
+
+    .message{
+        width: 960px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 30px;
+    }
+    .get-in-touch h2{
+        font-size: 35px;
+        padding: 20px;
+    }
+    .get-in-touch p{
+        padding: 15px;
+        font-size: 18px;
+    }
+    .message .text-area {
+        width: 350px;
+        position:relative;
+    }
+    .message .text-area input{
+        width: 100%;
+        margin: 15px 0px;
+        padding: 15px 10px;
+    }
+    .message .text-area span{
+        position:absolute;
+        left:0;
+        padding: 27px;
+        font-size: 18px;
+        transition: 0.3s;
+
+    }
+    .message .text-area input:valid ~ span,
+    .message .text-area input:focus ~ span{
+        color: aqua;
+        background: #fff;
+        font-weight: 600;
+        padding: 0px 10px;
+        border-left: 1px solid aqua;
+        border-right: 1px solid aqua ;
+        transform: translateX(15px) translateY(-1px);
+    }
+    .skill{
+        width:40%;
+    }
+    .skill_text{
+        width:50%;
+    }
+    .skill_area h2{
+        text-align: center;
+        padding: 30px 0px;
+        font-size: 40px;
+        color: tomato;
+    }
+    .skill_text-skill{
+        padding: 70px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .skill_area div h2{
+        padding: 30px 0px;
+        text-align: center;
+        color: tomato;
+        flex-direction: column;
+    }
+    .skill h3{
+        margin-left: 60px;
+    }
+    .progress{
+        width:80%;
+        height:9px;
+        background:red;
+        border-radius:4px;
+        margin: 20px auto;
+
+    }
+    .progress .html{
+        background:green;
+        height: 9px;
+        width: 0%;
+        border-radius:4px;
+        animation : html 1s linear forwards;
+    }
+    @keyframes html {
+        100%{
+        width: 87%;
+        }
+    }
+    #css{
+        background: blue;
+        animation: css 1s linear forwards;
+
+    }
+    @keyframes css {
+        100%{
+            width: 74%;
+        }
+    }
+    #js{
+        background: aqua;
+        animation: js 1s linear forwards;
+
+    }
+    @keyframes js {
+        100%{
+            width: 57%;
+        }
+    }
+    .html span{
+        float:right;
+        width:45px;
+        height:45px;
+        background:rgb(196, 196, 5);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:rgb(46, 6, 6);
+        font-weight: 700;
+        font-size: 14px;
+        margin-top: -17px;
+        margin-right: -20px;
+    }
+    #js span{
+        background-color: yellow;
+    }
+    #css span {
+        background-color: aqua;
+    }
+footer{
+    background: black;
+    padding: 50px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+</style>
+<body>
+ <div class="banner">
+    <nav>
+        <div class="logo"><a href="nav.html">Ripon</a></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Other</a></li>
+            <li><a href="#">Education</a></li>
+        </ul>
+    </nav>
+    <div class="banner-text" data-aos="fade-right"
+    data-aos-duration="2000">
+        <h1>I'am Ripon <br> Khandokar</h1>
+        <p>I am studying at Munshiganj Polytechnic Institute <br> in Computer Technology. <br> I want to be a web developer and <br> i want to work it in my future.</p>
+    </div>
+ </div>
+
+<div class="about">
+    <div class="about-img"  data-aos="fade-up"
+    data-aos-duration="2000">
+        <img src="IMG_3514.JPG" alt="">
+    </div>
+    <div class="about-text"  data-aos="fade-up"
+    data-aos-duration="2000">
+        <h2>About Ripon Khandokar</h2>
+        <p>
+            Swapan K Banerjee is a freelance writer specialising in literary features. Banerjee realised his calling as a writer when the author Ruskin Bond sent his articles and poems to Boston University’s Special Collection Library. His literary write-ups have been featured in several anthologies. Swapan K Banerjee is known for his books Rusty & I: Up-close with Ruskin Bond (RUPA) & People Who Meet People: Interviews with the Stars (Tranquebar)
+        </p>
+        <button  data-aos="flip-right">Read Full Story</button>
+    </div>
+</div>
+
+
+<div class="message">
+    <div class="get-in-touch"  data-aos="fade-right"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine">
+        <h2>Get in Touch</h2>
+        <p>Enter your email address and send me a message! I will absolutely get back to you.</p>
+    </div>
+    <div class="message">
+        <form action="#"  data-aos="fade-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+            <div class="text-area">
+                <input type="text" required="required"><span>Full Name</span>
+            </div>
+            <div class="text-area">
+                <input type="email"  required="required"> <span>E mail</span>
+            </div>
+            <div class="text-area">
+                <input type="text" required="required"><span>Message</span>
+            </div>
+            <div class="button">
+                <button  data-aos="flip-left">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="skill_area"  data-aos="fade-right"
+data-aos-duration="2000">
+    <h2>My Skill</h2>
+   <div class="skill_text-skill">
+    <div class="skill_text">
+        <p>Lorem, ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque earum et deserunt. Architecto tenetur quas quos sunt itaque tempore deserunt nulla molestias eveniet ipsa ducimus libero veniam inventore adipisci sequi culpa dolorum necessitatibus corrupti neque voluptatum, tempora assumenda alias sed. Soluta dignissimos laudantium quidem debitis explicabo laboriosam ratione, expedita commodi doloribus rerum accusantium, ut excepturi inventore numquam pariatur quod iusto velit mollitia cum! Totam reprehenderit quia impedit maiores dolore, accusamus ullam, voluptatem veritatis illo soluta possimus recusandae eos aspernatur ab ut nihil, itaque dicta corporis. Numquam quam laboriosam voluptatum vitae consequatur nihil eveniet accusamus, eaque debitis totam tempora quaerat facere. sit amet consectetur adipisicing elit. Sit, totam.</p>
+    </div>
+    <div class="skill">
+        <h3>HTML</h3>
+        <div class="progress">
+            <div class="html"><span>87%</span></div>
+        </div>
+        <h3>CSS</h3>
+        <div class="progress">
+            <div id="css" class="html"><span>74%</span></div>
+        </div>
+        <h3>JavasCript</h3>
+        <div class="progress">
+            <div id="js" class="html"><span>57%</span></div>
+        </div>
+    </div>
+   </div>
+</div>
+
+<footer  data-aos="fade-up"
+data-aos-duration="2000">
+    <p> Copy &copy; .All Right Reserve By Ripon Khandokar 2022</p>
+</footer>
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
